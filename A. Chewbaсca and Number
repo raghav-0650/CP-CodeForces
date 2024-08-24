@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class chewbaccanum{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String n = sc.next();
+        StringBuilder finalans = new StringBuilder();
+        //chect first number which is not equal to 0
+        char firstnum = n.charAt(0);
+        if(firstnum != '9'){
+            int newnum = 9 - Character.getNumericValue(firstnum);
+            if(newnum<Character.getNumericValue(firstnum)){
+                finalans.append(newnum);
+            }
+            else{
+                finalans.append(firstnum);
+            }
+        }else{
+            finalans.append(firstnum);
+        }
+        
+        //rest of it
+        for(int i =1 ;i<n.length();i++){
+            char current = n.charAt(i);
+            if(9 - Character.getNumericValue(current) > Character.getNumericValue(current)){
+                finalans.append(Character.getNumericValue(current));
+            }else{
+                finalans.append(9 - Character.getNumericValue(current));
+            }
+        }
+        System.out.println(finalans);
+    }
+}
