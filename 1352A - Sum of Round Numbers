@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class round{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-- >0){
+            int num = sc.nextInt();
+            int roundnumcount = 0;
+            int placevalue = 1;
+            StringBuilder result = new StringBuilder();
+            while(num > 0){
+                int digit = num%10;
+                if(digit != 0){
+                    roundnumcount++;
+                    result.append(digit*placevalue).append(" ");
+                }
+                num = num/10;
+                placevalue = placevalue*10;
+            }
+            System.out.println(roundnumcount);
+            System.out.println(result.toString().trim());
+        }
+       
+    }
+}
