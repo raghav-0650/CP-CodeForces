@@ -1,0 +1,21 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class newyear{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        
+        int[] array = {a,b,c};
+        
+        Arrays.sort(array);
+        
+        int mindistpoint = array[1];
+        
+        int mintotal = Math.abs(mindistpoint - array[0]) + Math.abs(mindistpoint - array[1]) + Math.abs(mindistpoint - array[2]);
+        
+        System.out.println(mintotal);
+    }
+}
